@@ -1,0 +1,24 @@
+<joblist>
+  <job>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>9ecc8d4e-e54b-42df-a39f-6343cafc160c</id>
+    <loglevel>INFO</loglevel>
+    <name>ParentJob</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <description>Run-JobA</description>
+        <jobref name='JobA' nodeStep='true' />
+      </command>
+      <command>
+        <description>Run-JobB</description>
+        <jobref name='JobB' nodeStep='true'>
+          <arg line='-variable1 ${export.variable1}' />
+        </jobref>
+      </command>
+    </sequence>
+    <uuid>9ecc8d4e-e54b-42df-a39f-6343cafc160c</uuid>
+  </job>
+</joblist>
